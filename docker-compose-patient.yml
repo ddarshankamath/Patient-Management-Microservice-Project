@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  patient-service:
+    build:
+      context: ./user
+      dockerfile: DockerFile
+    image: patient-service:latest
+    container_name: patient-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://patient-service-db:5432/db
+      SPRING_DATASOURCE_USERNAME: admin_user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_SQL_INIT_MODE: always
+      BILLING_SERVICE_ADDRESS: billing
+      BILLING_SERVICE_GRPC_PORT: 9001
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+
+    networks:
+      - user_internal
+
+networks:
+  user_internal:
+    external: true

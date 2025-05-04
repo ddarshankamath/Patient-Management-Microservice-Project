@@ -1,0 +1,10 @@
+PRODUCER keyed-message
+topic: patient
+key: 
+{
+    "id":"wfr",
+    "name":"avbnh"
+}
+
+###
+

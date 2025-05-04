@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    image: auth-service:latest
+    container_name: auth-service
+    environment:
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:postgresql://auth-service-db:5432/db
+      SPRING_DATASOURCE_USERNAME: admin_user
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_SQL_INIT_MODE: always
+      JWT_SECRET: c754e4e47056623fd206e0d53956619a2e3f19043ca3f902dce477b534630862
+    networks:
+      - user_internal
+
+networks:
+  user_internal:
+    external: true

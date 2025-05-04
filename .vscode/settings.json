@@ -1,0 +1,27 @@
+{
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5000,
+      "driver": "PostgreSQL",
+      "name": "patient-service-db",
+      "group": "hospital",
+      "database": "db",
+      "username": "admin_user",
+      "password": "password"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5001,
+      "driver": "PostgreSQL",
+      "name": "auth-service-db",
+      "database": "db",
+      "username": "admin_user",
+      "password": "password"
+    }
+  ]
+}
