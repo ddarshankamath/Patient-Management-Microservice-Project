@@ -17,7 +17,7 @@ public class KafkaConsumer {
 
         try {
             PatientEvent patientEvent = PatientEvent.parseFrom(event);
-            // logic
+            // logic to be added
 
             log.info("recived patient event:[patientId={},patientname=[],patientEmail={}]",
                     patientEvent.getPatientId(), patientEvent.getName(), patientEvent.getEmail());
